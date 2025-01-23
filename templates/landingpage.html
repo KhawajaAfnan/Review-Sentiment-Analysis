@@ -1,0 +1,220 @@
+<html><head>
+<meta charset="UTF-8">
+<title>ABSA Recommender System</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+    color: white;
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 1200px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-button {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    color: white;
+    border: none;
+}
+
+.secondary-button {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: white;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.features {
+    padding: 100px 20px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.decorative-circle {
+    position: fixed;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db55, #2ecc7155);
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.circle1 { width: 300px; height: 300px; top: 10%; left: 10%; animation-delay: 0s; }
+.circle2 { width: 200px; height: 200px; top: 60%; right: 10%; animation-delay: 2s; }
+.circle3 { width: 150px; height: 150px; bottom: 10%; left: 20%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+</style>
+</head>
+<body>
+    <div class="decorative-circle circle1"></div>
+    <div class="decorative-circle circle2"></div>
+    <div class="decorative-circle circle3"></div>
+
+    <nav>
+        <div class="nav-content">
+            <!-- <div class="logo">ABSA Recommender</div> -->
+            <!-- <div class="nav-links">
+                <a href="https://example.com/features">Features</a>
+                <a href="https://example.com/about">About</a>
+                <a href="https://example.com/contact">Contact</a>
+                <a href="https://example.com/login">Login</a>
+            </div> -->
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ABSA Recommender System</h1>
+            <p class="hero-description">
+                <!-- Harness the power of Aspect-Based Sentiment Analysis to gain deeper insights into customer feedback.
+                Our advanced AI-powered system helps you understand what your customers truly think about specific aspects of your products or services. -->
+            </p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('login') }}" class="button primary-button">Login</a>
+            <a href="{{ url_for('signup') }}" class="button secondary-button">Signup</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Detailed Analytics</h3>
+                <p>Get comprehensive insights into customer sentiments across different aspects of your business.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Precise Recommendations</h3>
+                <p>Receive targeted suggestions based on aspect-specific sentiment analysis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-time Processing</h3>
+                <p>Process and analyze customer feedback in real-time for immediate insights.</p>
+            </div>
+        </div>
+    </section>
+
+<script>
+
+</script>
+</body>
+</html>
